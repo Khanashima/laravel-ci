@@ -74,6 +74,7 @@ jobs:
           name: deploy to prod
           command: |
             aws deploy create-deployment \
+            --ignore-application-stop-failures \
             --application-name laravel-ci \
             --deployment-group-name laravel-ci \
             --s3-location bucket=${AWS_S3_BUCKET_NAME},key=laravel-ci.zip,bundleType=zip
